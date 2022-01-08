@@ -63,6 +63,9 @@ for i, get_teet_2 in enumerate(get_tweet):
 
 if not get_tweet:
     
+    print('更新なし')
+
+else:
     # 新着ツイートをLINEに送信
 
     Line_Token = os.environ['LINE_TOKEN']
