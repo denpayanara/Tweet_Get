@@ -44,9 +44,9 @@ def GetTweet(tweet_id):
     # 結果出力
     return twt_result
 
+get_tweet = []
+
 if tweets.data != None:
-    
-    get_tweet = []
 
     for tweet in tweets.data:
 
@@ -61,19 +61,21 @@ for i, get_teet_2 in enumerate(get_tweet):
     url = get_teet_2['url']
     send_message += f'【{i+1}件目】\n{text}\n{url}\n\n'
 
-# 新着ツイートをLINEに送信
+if not get_tweet:
+    
+    # 新着ツイートをLINEに送信
 
-Line_Token = os.environ['LINE_TOKEN']
+    Line_Token = os.environ['LINE_TOKEN']
 
-token_dic = {'Authorization': 'Bearer' + ' ' + Line_Token}
+    token_dic = {'Authorization': 'Bearer' + ' ' + Line_Token}
 
-send_dic = {'message': send_message} 
+    send_dic = {'message': send_message} 
 
-r = requests.post(
-    'https://notify-api.line.me/api/notify',
-    headers = token_dic,
-    data = send_dic
-    )
+    r = requests.post(
+        'https://notify-api.line.me/api/notify',
+        headers = token_dic,
+        data = send_dic
+        )
 
 # 現在の日本のdatetimeを取得し保存
 now = datetime.datetime.utcnow() + datetime.timedelta(hours = 9)
