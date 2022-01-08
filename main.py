@@ -12,7 +12,7 @@ Client = tweepy.Client(bearer_token)
 
 # 前回の実行時刻を取得
 
-tree = ET.parse(urllib.request.urlopen(url= 'https://raw.githubusercontent.com/denpayanara/Tweet_Get/gh-pages/before_datetime.xml'))
+tree = ET.parse(urllib.request.urlopen(url= 'https://denpayanara.github.io/Tweet_Get/before_datetime.xml'))
 
 root = tree.getroot()
 
