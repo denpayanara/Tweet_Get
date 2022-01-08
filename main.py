@@ -79,7 +79,7 @@ else:
         data = send_dic
         )
 
-# 現在の日本のdatetimeを取得し保存
+# 現在のdatetimeを取得し保存(UTC)
 now = datetime.datetime.utcnow()
 
 date_time = now.strftime('%Y-%m-%dT%H:%M:00Z')
