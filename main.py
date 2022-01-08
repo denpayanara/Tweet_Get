@@ -80,7 +80,7 @@ else:
         )
 
 # 現在の日本のdatetimeを取得し保存
-now = datetime.datetime.utcnow() + datetime.timedelta(hours = 9)
+now = datetime.datetime.utcnow()
 
 date_time = now.strftime('%Y-%m-%dT%H:%M:00Z')
 
