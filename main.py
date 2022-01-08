@@ -22,8 +22,7 @@ before_datetime = root.text
 # 時刻表記: YYYY-MM-DDTHH:mm:ssZ
 tweets = Client.search_recent_tweets(
     query = '楽天モバイル 奈良 -from:ZSCCli0y6RMxYmU -from:rakuten_travel2',
-    # start_time = before_datetime,
-    start_time = '2022-01-07T00:00:00Z',
+    start_time = before_datetime,
     tweet_fields = ['text', 'author_id'],
     expansions = ['author_id'],
     user_fields=["username"]
